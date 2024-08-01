@@ -12,6 +12,7 @@ to install Pygame. After that simply download this repository, and go into the T
 * Better UI handling
 * The "Black Screen of Death"
 * Randomized colours after a certain level
+* Better font
 # How you can help me
 If anyone adds anything, I'd be very happy if you'd share it with me, so that I can make it available/make you a contributer (I think that's how it works? I'm new to GitHub) and credit you in the README.md. Also, there is no license, so you can take it and re-publich it and stuff, I don't mind. Have fun with it.
 You can send me changes to publish under m.shafiei@europagym.at, and I'll make sure to send over a Thank you. If you do send me something, I'd love to know your GitHub user name, if you have one, or any name that I can put in the **Credits** section below.
