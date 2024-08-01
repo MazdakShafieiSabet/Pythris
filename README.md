@@ -18,3 +18,6 @@ If anyone adds anything, I'd be very happy if you'd share it with me, so that I 
 You can send me changes to publish under m.shafiei@europagym.at, and I'll make sure to send over a Thank you. If you do send me something, I'd love to know your GitHub user name, if you have one, or any name that I can put in the **Credits** section below.
 # Credits
 Mazdak Shafiei Sabet
+kheftel (fonts)
+Pixabay (Sound Effects)
+stratkat (Music)
