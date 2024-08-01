@@ -86,7 +86,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Tetris")
 
 # Load pixelated font
-font_path = "D:/VSCode/py/Tetris/04B_30__.TTF"
+font_path = "04B_30__.TTF"
 font_size = 20
 pixel_font = pygame.font.Font(font_path, font_size)
 
