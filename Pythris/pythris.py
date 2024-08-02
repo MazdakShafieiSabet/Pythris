@@ -6,16 +6,18 @@ pygame.init()
 pygame.mixer.init()
 
 # Music
-pygame.mixer.music.load("sounds/ChipChippy (loop).mp3")
+background_music = pygame.mixer.music.load("sounds/ChipChippy (loop).mp3")
 pygame.mixer.music.play(-1)
-line_clear_sound = pygame.mixer.Sound("sounds/game-over-arcade-6435.mp3")
 game_over_sound = pygame.mixer.Sound("sounds/game-over-38511.mp3")
 game_start_sound = pygame.mixer.Sound("sounds/game-start-6104.mp3")
+
+pygame.mixer.music.set_volume(0.75)
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 540, 720
 GRID_SIZE = 30
 GRID_WIDTH = SCREEN_WIDTH // GRID_SIZE
 GRID_HEIGHT = SCREEN_HEIGHT // GRID_SIZE
+BG = (20, 20, 20)
 BLUE = (0, 0, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
@@ -125,20 +127,12 @@ def save_highscore(name, score):
 def get_background_color(level):
     # Define a dictionary with level-specific background colors
     level_backgrounds = {
-        1: BLACK,
-        2: (10, 10, 10),  # Dark gray for level 2
-        3: (20, 20, 20),  # Lighter gray for level 3
-        4: (30, 30, 30),
-        5: (40, 40, 40),
-        6: (50, 50, 50),
-        7: (60, 60, 60),
-        8: (70, 70, 70),
         9: (80, 80, 80),
         # Add more levels and colors as needed
     }
    
-    # Return the background color for the current level, or default to black if not specified
-    return level_backgrounds.get(level, BLACK)
+    # Return the background color for the current level, or to default if not specified
+    return level_backgrounds.get(level, BG)
 
 def draw_multi_colored_title(text, font, x, y):
     color_index = 0
@@ -206,15 +200,17 @@ def draw_text(text, size, color, y_offset=0):
 # Main menu function
 def main_menu():
     while True:
-        screen.fill(BLACK)
-        draw_multi_colored_title("Pythris",pixel_font, 200, 100)
-        draw_multi_colored_title("Press any key to start",pixel_font, 50, 175)
-        draw_text("Credits", 25, WHITE, -100)
-        draw_text("Effects from", 25, WHITE, -25)
-        draw_text("Pixabay by Pixabay", 25, WHITE, 25)
-        draw_text("Music by", 25, WHITE, 100)
-        draw_text("stratkat under", 25, WHITE, 150)
-        draw_text("ChipChippy", 25, WHITE, 200)
+        screen.fill(BG)
+        draw_multi_colored_title("Pythris",pixel_font, 190, 75)
+        draw_multi_colored_title("Press any key to start",pixel_font, 50, 125)
+        draw_text("Credits", 25, WHITE, -150)
+        draw_text("Effects from:", 25, WHITE, -75)
+        draw_text("Pixabay by Pixabay", 25, WHITE, -25)
+        draw_text("Music:", 25, WHITE, 50)
+        draw_text("ChipChippy by", 25, WHITE, 100)
+        draw_text("stratkat", 25, WHITE, 150)
+        draw_text("Font by", 25, WHITE, 225)
+        draw_text("kheftel", 25, WHITE, 275)
         pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -230,7 +226,7 @@ def game_over_screen(score, name):
     save_highscore(name, score)
     highscores = load_highscores()
     while True:
-        screen.fill(BLACK)
+        screen.fill(BG)
         draw_text("Game Over", 50, WHITE, -100)
         draw_text(f"Score: {score}", 30, WHITE, -50)
         draw_text("Highscores", 25, WHITE, 0)
@@ -250,7 +246,7 @@ def game_over_screen(score, name):
 def enter_name():
     name = ""
     while True:
-        screen.fill(BLACK)
+        screen.fill(BG)
         draw_text("Enter name (3 chars.):", 25, WHITE, -50)
         draw_text(name, 50, WHITE, 50)
         pygame.display.flip()
@@ -348,7 +344,6 @@ def main(player_name):
             rows_cleared = 0
             if fall_speed > 5:
                 fall_speed -= 5
-                line_clear_sound.play
 
         # Draw the shape
         for y, row in enumerate(current_shape):
