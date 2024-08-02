@@ -7,12 +7,12 @@ pip install pygame
 ```
 to install Pygame. After that simply download this repository, and go into the Tetris folder, and then you want to find the Python file called tetris.py and double click. A command line window will appear, and that's fine, don't panic. It's just Python that's opening, and I'm not hacking you (I don't know how I'd do that). Just wait a little bit and a Window will open with the heading "Tetris". Now you can play. Yippie! 
 # Things I need/want to add
-* Music
-* Sounds
+* ~~Music~~ -> *added in Version 1.0, refined in Version 1.0.1*
+* ~~Sounds~~ *added in Version 1.0, refined in Version 1.0.1*
 * Better UI handling
-* The "Black Screen of Death"
+* ~~The "Black Screen of Death"~~ -> *currently (Version 1.0.1) only on Level 9*
 * Randomized colours after a certain level
-* Better font
+* ~~Better font~~ -> *added in Version 1.0, refined in Version 1.0.1, thank you kheftel!*
 # How you can help me
 If anyone adds anything, I'd be very happy if you'd share it with me, so that I can make it available/make you a contributer (I think that's how it works? I'm new to GitHub) and credit you in the README.md. Also, there is no license, so you can take it and re-publich it and stuff, I don't mind. Have fun with it.
 You can send me changes to publish under m.shafiei@europagym.at, and I'll make sure to send over a Thank you. If you do send me something, I'd love to know your GitHub user name, if you have one, or any name that I can put in the **Credits** section below.
